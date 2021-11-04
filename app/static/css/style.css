@@ -1,0 +1,185 @@
+body {
+    background-color: rgb(7,37,57)
+}
+
+
+/* Contenedor Flex para Cartas de Listing */
+.container-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-content: space-around;;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.container-1 div{
+    background-color: white;
+    border-radius: 20px
+}
+
+
+/* Inicio de la Seccion Card lIsting */
+.card {
+
+    margin: 80px;
+    display:grid; /* Crea grid */
+    grid-template-columns: 300px; /* Definle 'n' col y su ancho */
+    grid-template-rows: 210px 150px 90px 130px 50px; /* Define 'n' row y su altura */
+    grid-template-areas: "image" "text" "info" "agent" "stats"; /* Areas del grid y su referencia*/
+
+    font-family: roboto;
+    border-radius: 18px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    text-align: center;
+    transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
+    cursor: pointer; /* <-- Efecto Hover en la tarjeta */
+}
+
+/* efecto hover de la tarjeta */
+.card:hover {
+    transform: scale(0.9);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+
+/* Esta es la seccion que se encarga de customizar la imagen dentro de la carta */
+.card-image {
+    grid-area: image; /* <- Referencia la area con el Grid: Card */
+    border-top-left-radius: 15px
+    border-top-right-radius: 15px
+    background-size: 300px 210px
+}
+
+/* imagen del inmueble */
+.card-image img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* Seccion texto del listing */
+.card-text {
+    grid-area: text;
+    margin: 20px;
+}
+
+/* Precio */
+.card-text .price{
+    font-size: 20px;
+    color: white;
+    width:100%;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #52b69a;
+}
+
+/* Colonia */
+.card-text .colonia{
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-size: 26px;
+}
+
+/* tipo de inmuebl */
+.card-text .tipo-inmueble {
+    color: grey;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+/* Informacion inmueble */
+
+.card-info {
+    grid-area:info;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* Imagen de Informacion */
+.card-info img{
+    width: 20px;
+}
+
+
+/* Seccion Imagen e informacion de Agente */
+.card-agent {
+    grid-area: agent;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+/* Imagen de agente */
+.card-agent img{
+    width: 80%;
+    height: 80%;
+    border-radius: 60%;
+    margin-bottom: 50px;
+}
+
+/* Informacion del agente texto */
+.card-agent .info-agent{
+    width: 90%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 70%;
+}
+
+
+/* Seccion de contacto y like */
+.card-social {
+    grid-area: stats; /* Referencia la area con el Grid: Card */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Separado por Fracciones */
+    grid-template-rows: 1fr; /* Row Separada por fraccion */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+}
+
+
+.card-social a{
+    text-decoration: none;
+    text-decoration: none;
+    color: white;
+}
+
+.card-social a:hover{
+    color: orange;
+    transform: scale(1.2);
+}
+
+
+
+/* like */
+.card-social .like {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #1d3557;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    color: white;
+
+}
+
+/* Contacto */
+.card-social .contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #1d3557;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    color: white;
+
+}
+
+
+

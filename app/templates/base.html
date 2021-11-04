@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="{% block description %} {% endblock %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static', filename = '/css/style.css')}}">
+        <title> {% block title %} {% endblock %}</title>
+    </head>
+    <body>
+        <section class="container-1">
+            {% for item in items %}
+            <div class="card">
+                <!--Imagen de la tarjeta -->
+               <div class="card-image" >
+                   <a href="{{url_for('listing')}}"><img src="{{url_for('static', filename='/listing_pic/listingpic.jpeg')}}"></a>
+               </div>
+                <!-- Texto de la tarjeta -->
+                    <div class="card-text">
+                        <div class="price">Precio: $7000000</div>
+                        <h3 class="colonia">Puerta de Hierro</h3>
+                        <h4 class="tipo-inmueble">Casa en Venta</h4>
+                        <hr>
+                    </div>
+                <!-- Informacion del inmuebl -->
+                <div class="card-info">
+                    <div class="terreno"><p>200</p> <img src="{{url_for('static', filename= '/iconos/land.jpg')}}"  > </div>
+                    <div class="habitaciones"><p>200</p> <img src="{{url_for('static', filename= '/iconos/bed.jpg')}}"  ></div>
+                    <div class="banos"><p>200</p> <img src="{{url_for('static', filename= '/iconos/bath.png')}}"  ></div>
+                    <div class="autos"><p>200</p> <img src="{{url_for('static', filename= '/iconos/car.png')}}"  ></div>
+                </div>
+
+                <!-- Informacion Agente -->
+                <div class="card-agent">
+                    <a href="{{url_for('profile')}}"> <div class="img-agent"><img src="{{url_for('static', filename='/profile_pic/profile.jfif')}}"></div></a>
+                    <div class="info-agent">
+                        <p>Alberto Ortiz</p>
+                        <p>04/11/2021</p>
+                        <p>likes: 200</p>
+                    </div>
+                </div>
+                <!-- Informacion Social-->
+                <div class="card-social">
+                    <div class="like"><a href="#">Like</a></div>
+                    <div class="contacto"><a href="#">Contactar</a></div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </body>
+</html>
