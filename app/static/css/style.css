@@ -1,7 +1,24 @@
 body {
-    background-color: rgb(7,37,57)
+background: rgb(145,65,143);
+background: linear-gradient(315deg, rgba(145,65,143,1) 0%, rgba(0,7,36,1) 72%);
+}
+/*--------------------------------Menu de navgegacio---------------*/
+
+.navigation {
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+
 }
 
+.navigation div {
+    border: black 1px solid;
+}
+
+
+/*---------------------------------- Cards  -----------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
 
 /* Contenedor Flex para Cartas de Listing */
 .container-1 {
@@ -14,23 +31,24 @@ body {
 }
 
 .container-1 div{
-    background-color: white;
+    background-color: #0b132b;
+    opacity:1   ;
+    color: #fffffc;
     border-radius: 20px
 }
 
-
 /* Inicio de la Seccion Card lIsting */
-.card {
+.container-1 .card {
 
     margin: 80px;
     display:grid; /* Crea grid */
     grid-template-columns: 300px; /* Definle 'n' col y su ancho */
-    grid-template-rows: 210px 150px 90px 130px 50px; /* Define 'n' row y su altura */
+    grid-template-rows: 210px 150px 100px 130px 50px; /* Define 'n' row y su altura */
     grid-template-areas: "image" "text" "info" "agent" "stats"; /* Areas del grid y su referencia*/
 
-    font-family: roboto;
+    font-family: arial;
     border-radius: 18px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    box-shadow: 5px 5px 15px rgba(0,255,255,0.9);
     text-align: center;
     transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
     cursor: pointer; /* <-- Efecto Hover en la tarjeta */
@@ -63,51 +81,67 @@ body {
     grid-area: text;
     margin: 20px;
 }
+/*Color del texto de la tarjeta */
+.card-text a{
+    text-decoration: none;
+    text-decoration: none;
+    font-weight: bold;
+    color: #0b132b;
+}
+
 
 /* Precio */
 .card-text .price{
     font-size: 20px;
-    color: white;
+    font-weight: bold;
+    color: #0b132b;
     width:100%;
     margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
-    background-color: #52b69a;
+    background-color: white;
+    transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
+    cursor: pointer; /* <-- Efecto Hover en la tarjeta */
+}
+
+.card-text .price:hover{
+    box-shadow: 1px 1px 15px rgba(0,255,255,0.9);
 }
 
 /* Colonia */
 .card-text .colonia{
     margin-bottom: 5px;
-    margin-top: 0px;
-    font-size: 26px;
+    margin-top: 10px;
+    font-size: 23px;
 }
 
 /* tipo de inmuebl */
 .card-text .tipo-inmueble {
-    color: grey;
-    font-size: 16px;
+    color: #f72585;
+    font-size: 13px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
-
 
 /* Informacion inmueble */
 
 .card-info {
     grid-area:info;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 /* Imagen de Informacion */
 .card-info img{
-    width: 20px;
+    width: 25px;
 }
-
 
 /* Seccion Imagen e informacion de Agente */
 .card-agent {
     grid-area: agent;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
 }
 
@@ -117,6 +151,13 @@ body {
     height: 80%;
     border-radius: 60%;
     margin-bottom: 50px;
+    box-shadow: 1px 1px 10px rgba(0,255,255,0.9);
+    transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
+    cursor: pointer; /* <-- Efecto Hover en la tarjeta */
+}
+
+.card-agent img:hover{
+    box-shadow: 1px 1px 15px rgba(0,255,255,0.9);
 }
 
 /* Informacion del agente texto */
@@ -127,31 +168,29 @@ body {
     line-height: 70%;
 }
 
-
 /* Seccion de contacto y like */
 .card-social {
     grid-area: stats; /* Referencia la area con el Grid: Card */
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Separado por Fracciones */
+    grid-template-columns: repeat(2, 1fr); /* Separado por Fracciones */
     grid-template-rows: 1fr; /* Row Separada por fraccion */
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     text-align: center;
 }
 
-
+/*Color del texto de la tarjeta */
 .card-social a{
     text-decoration: none;
     text-decoration: none;
-    color: white;
+    font-weight: bold;
+    color: #0b132b;
 }
 
 .card-social a:hover{
-    color: orange;
-    transform: scale(1.2);
+    color: #f72585;
+    transform: scale(1.4);
 }
-
-
 
 /* like */
 .card-social .like {
@@ -159,12 +198,14 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: #1d3557;
+    background: white;
     border-bottom-right-radius: 0px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    color: white;
+}
 
+.card-social .like img {
+    width: 40px;
 }
 
 /* Contacto */
@@ -173,13 +214,12 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: #1d3557;
+    background: white;
     border-bottom-left-radius: 0px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
-    color: white;
-
 }
 
-
-
+.card-social .contacto img {
+    width: 30px;
+}

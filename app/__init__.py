@@ -5,9 +5,9 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
-    items = list(range(9))
+    items = list(range(6))
 
-    return render_template('base.html', items=items)
+    return render_template('index.html', items=items)
 
 @app.route('/profile')
 def profile():
