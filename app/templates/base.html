@@ -8,19 +8,22 @@
         <title> {% block title %} {% endblock %}</title>
     </head>
     <body>
-        <nav class="navigation">
-            <div class="logo">Perfect Deals</div>
-            <ul>
-                <li><a href="#">Explorar</a></li>
-                <li>
-                    <a href="#">Perfil</a>
-                    <ul>
-                        <li><a href="#">Crear Cuenta</a></li>
-                        <li><a href="#">Configuracion</a></li>
-                        <li><a href="#">Cerrar Sesion</a></li>
-                    </ul>
-
+        <nav class="nav_menu">
+            <ul class="nav_items">
+                <li class="logo">Perfect Deals</li>
+                <li class="search"><input type="search" name="search" placeholder="Buscar Ubicacion"></li>
+                <li class="profile"><img class="nav_profile" src="{{url_for('static', filename='/profile_pic/profile.jfif')}}">a
+                    <div class="sub_menu_profile">
+                        <ul>
+                            <li><a href="#">Crear Cuenta</a></li>
+                            <li><a href="#">Iniciar Sesion</a></li>
+                            <li><a href="#">Configuracion</a></li>
+                            <li><a href="#">Cerrar Sesion</a></li>
+                        </ul>
+                    </div>
                 </li>
+
+                <li class="cta"><button class="cta-listing">Publica Gratis</button></li>
             </ul>
         </nav>
         {% block content %}{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="container-1">
+            {% for item in items %}
+            <div class="card">
+                <!--Imagen de la tarjeta -->
+               <div class="card-image" >
+                   <a href="{{url_for('listing')}}"><img src="{{url_for('static', filename='/listing_pic/listingpic.jpeg')}}"></a>
+               </div>
+                <!-- Texto de la tarjeta -->
+                    <div class="card-text">
+                        <div class="colonia"><a href="#">Puerta de Hierro</a></div>
+                        <h3 class="price">$7,000,000</h3>
+                        <hr>
+                        <h4 class="tipo-inmueble">CASA EN VENTA</h4>
+                    </div>
+                <!-- Informacion del inmuebl -->
+                <div class="card-info">
+                    <div class="terreno"><p>200</p> <img src="{{url_for('static', filename= '/iconos/land_dark.png')}}"  > </div>
+                    <div class="habitaciones"><p>3</p> <img src="{{url_for('static', filename= '/iconos/bed_dark.png')}}"  ></div>
+                    <div class="banos"><p>2</p> <img src="{{url_for('static', filename= '/iconos/bath_dark.png')}}"  ></div>
+                    <div class="autos"><p>2</p> <img src="{{url_for('static', filename= '/iconos/car_dark.png')}}"  ></div>
+                </div>
+                <!-- Informacion Agente -->
+                <div class="card-agent">
+                    <a href="{{url_for('profile')}}"> <div class="img-agent"><img src="{{url_for('static', filename='/profile_pic/profile.jfif')}}"></div></a>
+                    <div class="info-agent">
+                        <p>Alberto Ortiz</p>
+                        <p>04/11/2021</p>
+                        <p>likes: 200</p>
+                    </div>
+                </div>
+                <!-- Informacion Social-->
+                <div class="card-social">
+                    <div class="like"><a href="#"><img src="{{url_for('static', filename= '/iconos/like.png')}}" }></a></div>
+                    <div class="contacto"><a href="#"><img src="{{url_for('static', filename= '/iconos/whatsapp.png')}}"></a></div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+{% endblock %}
