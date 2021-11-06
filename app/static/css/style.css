@@ -5,6 +5,8 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none
+    font-family: "Montserrat", arial;
 }
 
 :root {
@@ -13,8 +15,6 @@
     --dark_blue: #0b132b;
     --text-a: #edf0f1;
 }
-
-
 
 body {
 /*background: rgb(145,65,143);
@@ -25,14 +25,12 @@ background: radial-gradient(circle, rgba(41,51,124,1) 56%, rgba(161,65,171,0.854
 }
 
 
-
 /*--------------------------------Menu de naveggacion---------------*/
 
 /* Configuracion del los items del Menu */
 .nav_items {
     display: flex;
     align-items: center;
-    border: 1px solid white;
     padding: 25px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -96,19 +94,51 @@ background: radial-gradient(circle, rgba(41,51,124,1) 56%, rgba(161,65,171,0.854
     box-shadow: 1px 1px 10px rgba(0,255,255,0.9);
 }
 
-.sub_menu_profile{
+.nav_items .profile .dropdown_arrow{
+    width: 30px;
+    height: 30px;
+
+}
+
+.sub_menu_profile {
     display: none;
 }
 
-.nav_items .cta button{
-    width: 100%;
-    height: 40px;
-    border-radius: 20px;
+.nav_items .profile:hover .sub_menu_profile {
+       display: block;
+       position: absolute;
+       background-color:  #001219;
+       padding: 30px;
+       border-radius: 15px;
+       animation: dropdown-menu 1s forwards;
+}
+
+.nav_items .profile:hover .sub_menu_profile a{
+    text-decoration: none;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+@keyframes dropdown-menu {
+    from {
+        transform: translateY(70px);
+    }
+    to {
+        transform: translateY(95px);
+    }
 
 }
 
+.sub_menu_profile li {
+    list-style: none;
+}
 
-
+.nav_items .cta button {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+}
 
 
 /*---------------------------------- Cards  -----------------------*/
