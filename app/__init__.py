@@ -5,7 +5,6 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
-
     return render_template('index.html')
 
 @app.route('/profile')
@@ -17,6 +16,12 @@ def listing():
     items = list(range(20))
 
     return render_template('listing.html', items=items)
+
+@app.route('/dashboard')
+def dashboard():
+
+
+    return render_template('dashboard.html')
 
 
 

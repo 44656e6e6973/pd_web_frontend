@@ -5,8 +5,9 @@
 * {
     margin: 0;
     padding: 0;
-    text-decoration: none
+    text-decoration: none;
     font-family: "Montserrat", arial;
+    box-sizing: border-box;
 }
 
 :root {
@@ -25,13 +26,20 @@ background: radial-gradient(circle, rgba(41,51,124,1) 56%, rgba(161,65,171,0.854
 }
 
 
+
+
 /*--------------------------------Menu de naveggacion---------------*/
 
+.nav_menu {
+    /* position: relative; */
+    z-index: 100;
+}
+
 /* Configuracion del los items del Menu */
-.nav_items {
+body .nav_items {
     display: flex;
     align-items: center;
-    padding: 25px;
+    padding: 35px 25px 35px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 
@@ -46,6 +54,10 @@ background: radial-gradient(circle, rgba(41,51,124,1) 56%, rgba(161,65,171,0.854
 }
 
 /* Flex Conteiner position */
+
+.nav_items {
+    position: relative;
+}
 
 .nav_items .logo{
     display: flex;
@@ -100,34 +112,55 @@ background: radial-gradient(circle, rgba(41,51,124,1) 56%, rgba(161,65,171,0.854
 
 }
 
-.sub_menu_profile {
-    display: none;
+.nav_items .sub_menu_profile {
+    display: block;
+    position: absolute;
+    right: 17.4%;
+    background-color:  #001219;
+    padding: 55px 30px 10px;
+    border-radius: 15px;
+    z-index: -1;
+
 }
 
-.nav_items .profile:hover .sub_menu_profile {
-       display: block;
-       position: absolute;
-       background-color:  #001219;
-       padding: 30px;
-       border-radius: 15px;
-       animation: dropdown-menu 1s forwards;
+.go-down {
+    animation: "dropdown-menu 1s forwards";
+    transform: translateY(115px);
+    transition: 1s;
 }
 
-.nav_items .profile:hover .sub_menu_profile a{
+.go-up {
+    animation: "dropdown-menu 1s forwards";
+    transform: translateY(0px);
+    transition: 1s;
+}
+
+
+@keyframes dropdown-menu {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(200px);
+    }
+
+}
+
+@keyframes moveBackwards {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-170px);
+    }
+}
+
+
+.nav_items .sub_menu_profile a{
     text-decoration: none;
     color: white;
     text-decoration: none;
     font-size: 12px;
-}
-
-@keyframes dropdown-menu {
-    from {
-        transform: translateY(70px);
-    }
-    to {
-        transform: translateY(95px);
-    }
-
 }
 
 .sub_menu_profile li {
@@ -190,9 +223,9 @@ background: radial-gradient(circle, rgba(41,51,124,1) 56%, rgba(161,65,171,0.854
 /* Esta es la seccion que se encarga de customizar la imagen dentro de la carta */
 .card-image {
     grid-area: image; /* <- Referencia la area con el Grid: Card */
-    border-top-left-radius: 15px
-    border-top-right-radius: 15px
-    background-size: 300px 210px
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: 300px 210px;
 }
 
 /* imagen del inmueble */
@@ -353,3 +386,28 @@ background: radial-gradient(circle, rgba(41,51,124,1) 56%, rgba(161,65,171,0.854
 .card-social .contacto img {
     width: 30px;
 }
+
+/*Dasboar Profile*/
+.profile-dashboard-1 div{
+    border: 1px solid;
+}
+
+.profile-dashboard-1{
+    display: grid;
+    margin: 10px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 70px 300px;
+}
+
+.profile-card {
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+.slider-profile {
+    grid-column: 3/11;
+    grid-row: 2/3;
+}
+
+
+
