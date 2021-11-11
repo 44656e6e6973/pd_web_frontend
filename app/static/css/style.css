@@ -8,13 +8,20 @@
     text-decoration: none;
     font-family: "Montserrat", arial;
     box-sizing: border-box;
+    list-style: none;
 }
 
 :root {
-    --red-sunset: linear-gradient(35deg, rgba(53,92,125,1) 0%, rgba(108,91,123,1) 100%);
-    --purple-background: linear-gradient(315deg, rgba(145,65,143,1) 0%, rgba(0,7,36,1) 72%);
-    --dark_blue: #0b132b;
+
+    --pink-button: #f72585;
+    --dark_blue: #0b132b; 
     --text-a: #edf0f1;
+    --button-radius: 20px;
+    --white-shadow: 1px 1px 10px rgba(255,255,255,0.9);
+    --blue-shadow:  1px 1px 10px rgba(0,255,255,0.9);
+    --h1: 30px;
+    --h2: 18px;
+    --h3: 18px;
 }
 
 body {
@@ -98,7 +105,7 @@ body .nav_items {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     border-top-left-radius: 15px;
-    box-shadow: 1px 1px 10px rgba(255,255,255,0.9);
+    box-shadow: var(--white-shadow);
     border: none;
     text-align: center;
     transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */;
@@ -113,7 +120,7 @@ body .nav_items {
     width: 85px;
     height: 85px;
     border-radius: 50%;
-    box-shadow: 1px 1px 10px rgba(0,255,255,0.9);
+    box-shadow: var(--blue-shadow);
     transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */;
 }
 
@@ -180,13 +187,13 @@ body .nav_items {
 .nav_items .cta button {
     width: 50%;
     height: 40px;
-    border-radius: 20px;
+    border-radius: var(--button-radius);
     border: none;
     font-weight: bold;
     color: white;
     background: #f72585;
     cursor: pointer;
-    box-shadow: 1px 1px 10px rgba(255,255,255,0.9);
+    box-shadow: var(--white-shadow);
     transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
 }
 
@@ -204,6 +211,7 @@ body .nav_items {
 /* Contenedor Flex para Cartas de Listing */
 .container-1 {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
     align-content: space-around;;
@@ -299,7 +307,7 @@ body .nav_items {
     font-size: 20px;
 }
 
-/* tipo de inmuebl */
+/* tipo de inmueble */
 .card-text .tipo-inmueble {
     color: #f72585;
     font-size: 13px;
@@ -316,7 +324,7 @@ body .nav_items {
     grid-template-columns: repeat(4, 1fr);
 }
 
-/* Imagen de Informacion */
+/* Imagen de Informacion  */
 .card-info img{
     width: 25px;
 }
@@ -351,6 +359,9 @@ body .nav_items {
     vertical-align: middle;
     line-height: 70%;
 }
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 
 /* Seccion de contacto y like */
@@ -409,27 +420,316 @@ body .nav_items {
     width: 30px;
 }
 
-/*Dasboar Profile*/
+/*---------------------------------- Dashboard  -----------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+
+
+/* Header information */
+.location-info {
+    display:flex;
+    align-items: center;
+    justify-content: start;
+    margin: 30px 20px;
+}
+
+.location-info h1 {
+    font-size: var(--h1);
+    color: white;
+}
+
+/* ----------------------- edit ----*/
+/* ----------------------- edit ----*/
+/* ----------------------- edit ----*/
+/* ----------------------- edit ----*/
+/* ----------------------- edit ----*/
 .profile-dashboard-1 div{
+    /*border: 1px solid;*/
+    border-radius: 15px;
+}
+/* ----------------------- edit ----*/
+/* ----------------------- edit ----*/
+/* ----------------------- edit ----*/
+
+/* Main Grid for the dashboard */
+.profile-dashboard-1{
+    display: grid;
+    margin: 20px;
+    grid-gap: 10px;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 70px 500px;
+}
+
+/* General Configuration of the left Card (Profile) In the dashboard*/
+.profile-dashboard-1 .profile-card {
+    grid-row:1/3; /* <- Configuracion del Grid General */
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 160px 150px 70px 150px 50px;
+    align-content: space-evenly;
+    text-align: center;
+    background-color: var(--dark_blue);
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    box-shadow: var(--white-shadow);
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+/* Picture Configuration Profile listing*/
+.profile-card .card-agent-listing{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.profile-dashboard-1 .profile-card .profile-picture {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    box-shadow: var(--blue-shadow);
+}
+
+/* Agent Info Configuration */
+.profile-card .card-agent-info {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.profile-card .card-agent-info li{
+    margin: 4px 0px;
+    font-size: 12px;
+}
+
+.profile-card .card-agent-info h3{
+    font-size: var(--h3);
+}
+
+/* Configuration Button Cta Contact*/
+.profile-card .contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-dashboard-1 .profile-card .contact-button .cta-contact {
+    background-color: var(--pink-button);
+    color: white;
+    font-weight: bold;
+    border: none;
+    width: 170px;
+    height: 40px;
+    border-radius: var(--button-radius);
+    box-shadow: var(--white-shadow);
+}
+
+/* Followers boxes Configuration */
+.profile-dashboard-1 .profile-card .card-agent-followers{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    font-size: 12px;
+}
+
+.profile-dashboard-1 .profile-card .card-agent-followers div{
+    display:flex;
+    flex-direction: columns;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    margin: 5px;
     border: 1px solid;
 }
 
-.profile-dashboard-1{
+.card-agent-followers .pink{color: var(--pink-button);}
+
+/* Buttons boxes Configuration */
+.profile-dashboard-1 .profile-card .card-agent-buttons{
     display: grid;
-    margin: 10px;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 70px 300px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px;
+    align-items: center;
+    background-color: white;
+    color: var(--dark_blue);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+/* like */
+.card-agent-buttons .follow img{ width: 40px;}
+/* Whatsapp */
+.card-agent-buttons .contact img{ width: 30px;}
+
+/* Config Divs Dashboard */
+/* Colonia*/
+.profile-dashboard-1 .dash-colonia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark_blue);
+    color:white;
+    box-shadow: var(--white-shadow);
+    text-align: center;
+    font-weight: bold;
 }
 
-.profile-card {
-    grid-column: 1/3;
-    grid-row: 1/3;
+/* Active */
+.profile-dashboard-1 .dash-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark_blue);
+    color:white;
+    box-shadow: var(--white-shadow);
+    text-align: center;
 }
 
+.profile-dashboard-1 .dash-active button{
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+.profile-dashboard-1 .dash-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark_blue);
+    color:white;
+    box-shadow: var(--white-shadow);
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Terreno */
+.profile-dashboard-1 .dash-m2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark_blue);
+    color:white;
+    box-shadow: var(--white-shadow);
+    text-align: center;
+    font-weight: bold;
+}
+
+.profile-dashboard-1 .dash-m2 img{
+    width: 20px;
+    height: 20px;
+    margin:10px;
+}
+
+/* Construccion */
+.profile-dashboard-1 .dash-construccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark_blue);
+    color:white;
+    box-shadow: var(--white-shadow);
+    text-align: center;
+    font-weight: bold;
+}
+
+.profile-dashboard-1 .dash-construccion img{
+    width: 25px;
+    height: 25px;
+    margin:10px;
+}
+
+/* habitaciones */
+.profile-dashboard-1 .dash-hab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark_blue);
+    color:white;
+    box-shadow: var(--white-shadow);
+    text-align: center;
+    font-weight: bold;
+}
+
+.profile-dashboard-1 .dash-hab img{
+    width: 25px;
+    height: 25px;
+    margin:10px;
+}
+
+/* banos */
+.profile-dashboard-1 .dash-banos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark_blue);
+    color:white;
+    box-shadow: var(--white-shadow);
+    text-align: center;
+    font-weight: bold;
+}
+
+.profile-dashboard-1 .dash-banos img{
+    width: 25px;
+    height: 25px;
+    margin:10px;
+}
+
+/* autos */
+.profile-dashboard-1 .dash-autos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark_blue);
+    color:white;
+    box-shadow: var(--white-shadow);
+    text-align: center;
+    font-weight: bold;
+}
+
+.profile-dashboard-1 .dash-autos img{
+    width: 25px;
+    height: 25px;
+    margin:10px;
+}
+
+/* Slider and statistics */
 .slider-profile {
-    grid-column: 3/11;
+    grid-column: 2/6;
     grid-row: 2/3;
+    background-color: var(--dark_blue);
+    box-shadow: var(--white-shadow);
 }
+
+.slider-profile img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: none;
+}
+
+.chart-price {
+    grid-column: 6/10;
+    grid-row: 2/2;
+}
+
+.chart-price img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: var(--white-shadow);
+}
+
+
+
 
 
 

@@ -1,27 +1,77 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-    <section class="profile-dashboard-1">
-        <div class="profile-card">
-            <div class="card-agent"> <img src="{{url_for('static', filename='/profile_pic/profile.jfif')}}"></div>
-            <div class="card-agent"> Jorge Canchola</div>
-            <div class="card-agent"> Perfect Deals</div>
-            <div class="card-agent"> 3339548781</div>
-            <div class="card-agent"> Seguir</div>
-            <div class="card-agent"> Seguidores/Siguiendo</div>
-
-        </div>
-        <div>Colonia</div>
-        <div>Activa</div>
-        <div>12,000,000</div>
-        <div>500 m2</div>
-        <div>500 m2</div>
-        <div>3</div>
-        <div>2</div>
-        <div>3</div>
-        <div class="slider-profile">Slider</div>
-
-    </section>
-
+<header class="location-info">
+        <h1>Puerta de Hierro, Zapopan Jalisco</h1>
+</header>
+<section class="profile-dashboard-1">
+   <div class="profile-card">
+      <div class="card-agent-listing"> <img class="profile-picture" src="{{url_for('static', filename= '/profile_pic/profile.jfif')}}"></div>
+      <div class="card-agent-info">
+         <ul>
+            <li>
+               <h3>Jorge Canchala</h3>
+            </li>
+            <hr>
+            <br>
+            <li>Perfect Deals</li>
+            <li>Paseo Loma Larga</li>
+            <li>333-9549-781</li>
+            <li>www.perfectdeals.com.mx</li>
+         </ul>
+      </div>
+      <div class="contact-button">
+         <button class="cta-contact">Contactar Agente</button>
+      </div>
+      <div class="card-agent-followers">
+         <div class="seguidores">
+            <ul>
+               <li>200</li>
+               <li class="pink">Seguidores</li>
+            </ul>
+         </div>
+         <div class="siguiendo">
+            <ul>
+               <li>20</li>
+               <li class="pink">Siguiendo</li>
+            </ul>
+         </div>
+      </div>
+      <div class="card-agent-buttons">
+         <div class="follow"><img src="{{url_for('static', filename= '/iconos/like.png')}}"></div>
+         <div class="contact"><img src="{{url_for('static', filename= '/iconos/whatsapp.png')}}"></div>
+      </div>
+   </div>
+   <div class="dash-colonia">Venta</div>
+   <div class="dash-active">
+       <button class="active">Activa</button>
+   </div>
+   <div class="dash-price">$12,000,000</div>
+   <div class="dash-m2">
+       <img src="{{url_for('static', filename= '/iconos/land_dark.png')}}">
+       <p>500 m2</p>
+   </div>
+   <div class="dash-construccion">
+       <img src="{{url_for('static', filename= '/iconos/const_dark.png')}}">
+       <p>500 m2</p>
+   </div>
+   <div class="dash-hab">
+       <img src="{{url_for('static', filename= '/iconos/bed_dark.png')}}">
+       <p>3</p>
+   </div>
+   <div class="dash-banos">
+       <img src="{{url_for('static', filename='/iconos/bath_dark.png' )}}">
+       <p>2</p>
+   </div>
+   <div class="dash-autos">
+       <img src="{{url_for('static', filename='/iconos/car_dark.png')}}">
+       <p>3</p>
+   </div>
+   <div class="slider-profile">
+       <img src="{{url_for('static', filename='/listing_pic/listingpic.jpeg')}}">
+   </div>
+    <div class="chart-price">
+<!--        <img src="{{url_for('static', filename='/plots/price_box.png')}}">-->
+        {% include '/12089/price_box.html' %}
+    </div>
+</section>
 {% endblock %}
