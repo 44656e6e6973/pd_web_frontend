@@ -17,8 +17,8 @@
     --dark_blue: #0b132b; 
     --text-a: #edf0f1;
     --button-radius: 20px;
-    --white-shadow: 1px 1px 10px rgba(255,255,255,0.9);
-    --blue-shadow:  1px 1px 10px rgba(0,255,255,0.9);
+    --white-shadow: 1px 1px 10px rgba(255,255,255,0.4);
+    --blue-shadow:  1px 1px 10px rgba(0,255,255,0.4);
     --h1: 30px;
     --h2: 18px;
     --h3: 18px;
@@ -28,11 +28,16 @@ body {
 /*background: rgb(145,65,143);
 background: linear-gradient(315deg, rgba(145,65,143,1) 0%, rgba(0,7,36,1) 72%);*/
 
+/* Color Azul con Morado
 background: rgb(41,51,124);
 background: radial-gradient(circle, rgba(41,51,124,1) 56%, rgba(161,65,171,0.8547794117647058) 100%);
+*/
+
+
+/* Color Azul con blanco  */
+background: rgb(23,80,143);
+background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
 }
-
-
 /*--------------------------------Menu de naveggacion---------------*/
 
 .nav_menu {
@@ -55,7 +60,7 @@ body .nav_items {
     color: white;
     list-style: none;
     background-color: #001219;
-    box-shadow: 5px 5px 15px rgba(255,255,255,0.9);
+    box-shadow: var(--white-shadow);
 }
 
 /* Flex Conteiner position */
@@ -237,7 +242,7 @@ body .nav_items {
     font-family: "Montserrat";
     font-weight: bold;
     border-radius: 18px;
-    box-shadow: 5px 5px 15px rgba(0,255,255,0.9);
+    box-shadow: var(--white-shadow);
     text-align: center;
     transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
     cursor: pointer; /* <-- Efecto Hover en la tarjeta */
@@ -431,7 +436,7 @@ body .nav_items {
     display:flex;
     align-items: center;
     justify-content: start;
-    margin: 30px 20px;
+    margin: 40px 20px 60px 20px;
 }
 
 .location-info h1 {
@@ -456,7 +461,7 @@ body .nav_items {
 .profile-dashboard-1{
     display: grid;
     margin: 20px;
-    grid-gap: 10px;
+    grid-gap: 30px;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: 70px 500px;
 }
@@ -467,7 +472,7 @@ body .nav_items {
 
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 160px 150px 70px 150px 50px;
+    grid-template-rows: 160px 150px 70px 170px 50px;
     align-content: space-evenly;
     text-align: center;
     background-color: var(--dark_blue);
@@ -593,7 +598,7 @@ body .nav_items {
 .profile-dashboard-1 .dash-active button{
     background-color: green;
     border: none;
-    border-radius: 10px;
+    border-radius: 50px;
     width: 100px;
     height: 40px;
     color: white;
@@ -712,20 +717,21 @@ body .nav_items {
 .slider-profile img{
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 0px;
     border: none;
 }
 
 .chart-price {
     grid-column: 6/10;
     grid-row: 2/2;
+    box-shadow: var(--white-shadow);
 }
 
 .chart-price img {
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    box-shadow: var(--white-shadow);
+
 }
 
 
