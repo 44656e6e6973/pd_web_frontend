@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<header class="location-info">
-        <h1>Puerta de Hierro, Zapopan Jalisco</h1>
+<header class="main-information">
+        <h1>Puerta de Hierro, Zapopan, Jalisco</h1>
 </header>
 <section class="profile-dashboard-1">
-   <div class="profile-card">
-      <div class="card-agent-listing"> <img class="profile-picture" src="{{url_for('static', filename= '/profile_pic/profile.jfif')}}"></div>
-      <div class="card-agent-info">
+   <div class="card-info-div profile-card">
+      <div class="flex-general-div card-agent-listing"> <img class="profile-picture" src="{{url_for('static', filename= '/profile_pic/profile.jfif')}}"></div>
+      <div class="card-info-div card-agent-info">
          <ul>
             <li>
                <h3>Jorge Canchala</h3>
@@ -19,51 +19,51 @@
             <li>www.perfectdeals.com.mx</li>
          </ul>
       </div>
-      <div class="contact-button">
-         <button class="cta-contact">Contactar Agente</button>
+      <div class="flex-general-div contact-button">
+         <button class="general-button cta-contact">Contactar Agente</button>
       </div>
       <div class="card-agent-followers">
-         <div class="seguidores">
+         <div class="flex-general-div seguidores">
             <ul>
                <li>200</li>
                <li class="pink">Seguidores</li>
             </ul>
          </div>
-         <div class="siguiendo">
+         <div class="flex-general-div siguiendo">
             <ul>
                <li>20</li>
                <li class="pink">Siguiendo</li>
             </ul>
          </div>
       </div>
-      <div class="card-agent-buttons">
-         <div class="follow"><img src="{{url_for('static', filename= '/iconos/like.png')}}"></div>
-         <div class="contact"><img src="{{url_for('static', filename= '/iconos/whatsapp.png')}}"></div>
+      <div class="bottom-card-social">
+         <div class="like-div"><img class="icono-like" src="{{url_for('static', filename= '/iconos/like.png')}}"></div>
+         <div class="whatsapp-div"><img class="icono-whatsapp" src="{{url_for('static', filename= '/iconos/whatsapp.png')}}"></div>
       </div>
    </div>
-   <div class="dash-colonia" id="div-dash-top">Venta</div>
-   <div class="dash-active" id="div-dash-top">
-       <button class="active">Activa</button>
+   <div class="flex-general-div card-info-div dash-tipo-operacion" >Venta</div>
+   <div class="flex-general-div card-info-div dash-active" >
+       <button class="general-button active">Activa</button>
    </div>
-   <div class="dash-price" id="div-dash-top">$12,000,000</div>
-   <div class="dash-m2" id="div-dash-top">
-       <img id="icono-listing-size" src="{{url_for('static', filename= '/iconos/land_dark.png')}}">
+   <div class="flex-general-div card-info-div dash-price" >$12,000,000</div>
+   <div class="flex-general-div card-info-div dash-m2" >
+       <img class="icono-dash" src="{{url_for('static', filename= '/iconos/land_dark.png')}}">
        <p>500 m2</p>
    </div>
-   <div class="dash-construccion" id="div-dash-top">
-       <img id="icono-listing-size" src="{{url_for('static', filename= '/iconos/const_dark.png')}}">
+   <div class="flex-general-div card-info-div dash-construccion" >
+       <img class="icono-dash" src="{{url_for('static', filename= '/iconos/const_dark.png')}}">
        <p>500 m2</p>
    </div>
-   <div class="dash-hab" id="div-dash-top">
-       <img id="icono-listing-size" src="{{url_for('static', filename= '/iconos/bed_dark.png')}}">
+   <div class="flex-general-div card-info-div dash-hab" >
+       <img class="icono-dash" src="{{url_for('static', filename= '/iconos/bed_dark.png')}}">
        <p>3</p>
    </div>
-   <div class="dash-banos" id="div-dash-top">
-       <img id="icono-listing-size" src="{{url_for('static', filename='/iconos/bath_dark.png' )}}">
+   <div class="flex-general-div card-info-div dash-banos" >
+       <img class="icono-dash" src="{{url_for('static', filename='/iconos/bath_dark.png' )}}">
        <p>2</p>
    </div>
-   <div class="dash-autos" id="div-dash-top">
-       <img id="icono-listing-size" src="{{url_for('static', filename='/iconos/car_dark.png')}}">
+   <div class="flex-general-div card-info-div dash-autos" >
+       <img class="icono-dash" src="{{url_for('static', filename='/iconos/car_dark.png')}}">
        <p>3</p>
    </div>
    <div class="slider-profile">

@@ -1,6 +1,28 @@
-/* Configuracion General del sitio */
+/* Configuracion General Del Sitio Web */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+:root {
+    --pink-button: #f72585;
+    --dark-blue: #0b132b;
+    --button-radius: 20px;
+    --border-card: 20px;
+    --white-shadow: 1px 1px 10px rgba(255,255,255,0.4);
+    --blue-shadow:  1px 1px 10px rgba(0,255,255,0.4);
+    --hover-sacale: scale(1.1);
+    --h1: 30px;
+    --h2: 20px;
+    --h3: 20px;
+}
+
+h1 {
+    var(--h1);
+    color: white;
+}
+
+h2, h3{ 20px; }
+
+h4 { 13px; }
 
 * {
     margin: 0;
@@ -11,22 +33,143 @@
     list-style: none;
 }
 
-:root {
-    --pink-button: #f72585;
-    --dark-blue: #0b132b;
-    --button-radius: 20px;
-    --white-shadow: 1px 1px 10px rgba(255,255,255,0.4);
-    --blue-shadow:  1px 1px 10px rgba(0,255,255,0.4);
-    --h1: 30px;
-    --h2: 18px;
-    --h3: 18px;
+body {
+    background: rgb(23,80,143); /* <-- Color Azul con blanco  */
+    background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
 }
 
-body {
-/* Color Azul con blanco  */
-background: rgb(23,80,143);
-background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
+/* Header Regular title */
+.main-information {
+    display:flex;
+    align-items: center;
+    justify-content: start;
+    margin: 40px 20px 60px 20px;
 }
+
+/* Configuracion General Cartas de Informacion (Listing/UserAgent) */
+
+.card-info-div {
+    box-shadow: var(--white-shadow);
+    background-color: var(--dark-blue);
+    color:white;
+    border-radius: var(--border-card);
+    text-align: center;
+    font-weight: bold;
+}
+
+.flex-general-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-info-div-inside {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Config Profile Pic */
+.profile-picture {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: var(--blue-shadow);
+    transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
+    cursor: pointer; /* <-- Efecto Hover en la tarjeta */
+}
+
+.profile-picture:hover{
+    box-shadow: 1px 1px 15px rgba(0,255,255,0.9);
+}
+/* General Config Botones Sitio Web */
+.general-button {
+    width: 50%;
+    height: 40px;
+    font-weight: bold;
+    border-radius: var(--button-radius);
+    border: none;
+    box-shadow: var(--white-shadow);
+    color: white;
+    background-color: var(--pink-button);
+    cursor: pointer;
+    transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
+}
+
+.general-button:hover {
+    box-shadow: 1px 1px 20px rgba(255,255,255,0.9);
+    background: orange;
+    transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
+    transform: scale(0.95);
+}
+/*  Config Iconos Inmuebles */
+.icono-dash{
+    width: 25px;
+    height: 25px;
+    margin:10px;
+}
+/*-----------------------------------------------------------------*/
+/*----------Configuracion Bottom Social Card (lik/whatsapp --------*/
+/*-----------------------------------------------------------------*/
+.bottom-card-social {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Separado por Fracciones */
+    grid-template-rows: 1fr; /* Row Separada por fraccion */
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: var(--border-card);
+    border-bottom-right-radius: var(--border-card);
+    background-color: white;
+}
+
+/* Config Icono Like */
+.like-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: white;
+    border-bottom-left-radius: var(--border-card);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.icono-like {
+
+    width: 40px;
+    cursor: pointer;
+}
+
+.icono-like:hover {
+    transform: var(--hover-sacale);
+}
+/* Config Icono Whatsapp */
+.whatsapp-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: white;
+    border-bottom-right-radius: var(--border-card);
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.icono-whatsapp {
+    width: 30px;
+    cursor: pointer;
+}
+
+.icono-whatsapp:hover {
+    transform: var(--hover-sacale);
+}
+
+/* Listing Card Img */
+.listing-card-img {
+    border-top-left-radius: var(--border-card);
+    border-top-right-radius: var(--border-card);
+}
+
+
 /*--------------------------------Menu de naveggacion---------------*/
 
 .nav_menu {
@@ -177,29 +320,8 @@ background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
 .sub_menu_profile li {
     list-style: none;
 }
-
-.nav_items .cta button {
-    width: 50%;
-    height: 40px;
-    border-radius: var(--button-radius);
-    border: none;
-    font-weight: bold;
-    color: white;
-    background: #f72585;
-    cursor: pointer;
-    box-shadow: var(--white-shadow);
-    transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
-}
-
-.nav_items .cta button:hover {
-    box-shadow: 1px 1px 20px rgba(255,255,255,0.9);
-    background: orange;
-    transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
-    transform: scale(1.2);
-}
+/*-----------------------------------------------------------------*/
 /*---------------------------------- Cards  -----------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 
 /* Contenedor Flex para Cartas de Listing */
@@ -213,79 +335,47 @@ background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
     overflow: hidden;
 }
 
-.container-1 div{
-    background-color: #0b132b;
-    opacity:1   ;
-    color: #fffffc;
-    border-radius: 20px
-}
 
 /* Inicio de la Seccion Card lIsting */
-.container-1 .card {
+.container-1 .card-div {
     display:grid; /* Crea grid */
     margin: 80px;
     grid-template-columns: 300px; /* Definle 'n' col y su ancho */
     grid-template-rows: 210px 150px 100px 130px 50px; /* Define 'n' row y su altura */
     grid-template-areas: "image" "text" "info" "agent" "stats"; /* Areas del grid y su referencia*/
-
-    font-family: "Montserrat";
-    font-weight: bold;
-    border-radius: 18px;
-    box-shadow: var(--white-shadow);
-    text-align: center;
     transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
     cursor: pointer; /* <-- Efecto Hover en la tarjeta */
 }
 
 /* efecto hover de la tarjeta */
-.card:hover {
-    transform: scale(0.95);
+.card-div:hover {
+    transform: var(--hover-sacale);
     box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
 }
-/*-----------------------------------------------------------------*/
 
 /* Esta es la seccion que se encarga de customizar la imagen dentro de la carta */
 .card-image {
     grid-area: image; /* <- Referencia la area con el Grid: Card */
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    background-size: 300px 210px;
 }
 
 /* imagen del inmueble */
 .card-image img{
     width: 100%;
     height: 100%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
 }
-/*-----------------------------------------------------------------*/
 
 /* Seccion texto del listing */
 .card-text {
     grid-area: text;
     margin: 20px;
 }
-/*Color del texto de la tarjeta */
-.card-text a{
-    text-decoration: none;
-    text-decoration: none;
-    font-weight: bold;
-    color: #0b132b;
-}
 
-
-/* Precio */
+/* Colonia */
 .card-text .colonia{
-    font-size: 20px;
-    font-weight: bold;
-    color: #0b132b;
-    width:100%;
-    margin-bottom: 10px;
+    color: var(--dark-blue);
+    background-color: white;
     padding-top: 10px;
     padding-bottom: 10px;
-    text-align: center;
-    background-color: white;
     transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
     cursor: pointer; /* <-- Efecto Hover en la tarjeta */
 }
@@ -294,33 +384,17 @@ background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
     box-shadow: 1px 1px 15px rgba(0,255,255,0.9);
 }
 
-/* Colonia */
-.card-text .price{
-    margin-bottom: 5px;
-    margin-top: 10px;
-    font-size: 20px;
-}
-
 /* tipo de inmueble */
 .card-text .tipo-inmueble {
-    color: #f72585;
     font-size: 13px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    color: #f72585;
 }
-/*-----------------------------------------------------------------*/
 
 /* Informacion inmueble */
-
 .card-info {
     grid-area:info;
     display:grid;
     grid-template-columns: repeat(4, 1fr);
-}
-
-/* Imagen de Informacion  */
-.card-info img{
-    width: 25px;
 }
 
 /* Seccion Imagen e informacion de Agente */
@@ -331,120 +405,26 @@ background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
     grid-template-rows: 1fr;
 }
 
-/* Imagen de agente */
-.card-agent img{
-    width: 65%;
-    height: 65%;
-    border-radius: 60%;
-    margin-bottom: 50px;
-    box-shadow: 1px 1px 10px rgba(0,255,255,0.9);
-    transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
-    cursor: pointer; /* <-- Efecto Hover en la tarjeta */
-}
-
-.card-agent img:hover{
-    box-shadow: 1px 1px 15px rgba(0,255,255,0.9);
-}
-
 /* Informacion del agente texto */
-.card-agent .info-agent{
-    width: 90%;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 70%;
+.info-agent-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
 
 /* Seccion de contacto y like */
-.card-social {
+.bottom-card-social-listing {
     grid-area: stats; /* Referencia la area con el Grid: Card */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Separado por Fracciones */
-    grid-template-rows: 1fr; /* Row Separada por fraccion */
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    text-align: center;
 }
 
-/*Color del texto de la tarjeta */
-.card-social a{
-    text-decoration: none;
-    text-decoration: none;
-    font-weight: bold;
-    color: #0b132b;
-}
-
-.card-social a:hover{
-    color: #f72585;
-    transform: scale(1.4);
-}
-
-/* like */
-.card-social .like {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: white;
-    border-bottom-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-}
-
-.card-social .like img {
-    width: 40px;
-}
-
-/* Contacto */
-.card-social .contacto {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: white;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-}
-
-.card-social .contacto img {
-    width: 30px;
-}
-
-/*---------------------------------- Dashboard  -----------------------*/
 /*-----------------------------------------------------------------*/
+/*-------------------------- Dashboard-----------------------------*/
 /*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-
-
-/* Header information */
-.location-info {
-    display:flex;
-    align-items: center;
-    justify-content: start;
-    margin: 40px 20px 60px 20px;
-}
-
-.location-info h1 {
-    font-size: var(--h1);
-    color: white;
-}
-
-/* ----------------------- edit ----*/
-/* ----------------------- edit ----*/
-/* ----------------------- edit ----*/
-/* ----------------------- edit ----*/
-/* ----------------------- edit ----*/
 .profile-dashboard-1 div{
     /*border: 1px solid;*/
     border-radius: 15px;
 }
-/* ----------------------- edit ----*/
-/* ----------------------- edit ----*/
-/* ----------------------- edit ----*/
 
 /* Main Grid for the dashboard */
 .profile-dashboard-1{
@@ -463,35 +443,15 @@ background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 160px 150px 70px 170px 50px;
     align-content: space-evenly;
-    text-align: center;
-    background-color: var(--dark-blue);
-    color: white;
-    font-weight: bold;
     font-size: 13px;
-    box-shadow: var(--white-shadow);
     border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-
-/* Picture Configuration Profile listing*/
-.profile-card .card-agent-listing{
-    display: flex;
-    align-items: center;
-    justify-content:center;
-}
-
-.profile-dashboard-1 .profile-card .profile-picture {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    box-shadow: var(--blue-shadow);
 }
 
 /* Agent Info Configuration */
 .profile-card .card-agent-info {
-    display: flex;
     align-items: start;
-    justify-content: center;
+    border: none;
+    box-shadow:none;
 }
 
 .profile-card .card-agent-info li{
@@ -503,22 +463,9 @@ background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
     font-size: var(--h3);
 }
 
-/* Configuration Button Cta Contact*/
-.profile-card .contact-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .profile-dashboard-1 .profile-card .contact-button .cta-contact {
-    background-color: var(--pink-button);
-    color: white;
-    font-weight: bold;
-    border: none;
     width: 170px;
     height: 40px;
-    border-radius: var(--button-radius);
-    box-shadow: var(--white-shadow);
 }
 
 /* Followers boxes Configuration */
@@ -531,11 +478,8 @@ background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
 }
 
 .profile-dashboard-1 .profile-card .card-agent-followers div{
-    display:flex;
     flex-direction: columns;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     height: 80px;
     margin: 5px;
     border: 1px solid;
@@ -543,50 +487,17 @@ background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
 
 .card-agent-followers .pink{color: var(--pink-button);}
 
-/* Buttons boxes Configuration */
-.profile-dashboard-1 .profile-card .card-agent-buttons{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 50px;
-    align-items: center;
-    background-color: white;
-    color: var(--dark-blue);
+.bottom-card-social div{
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
 }
-/* like */
-.card-agent-buttons .follow img{ width: 40px;}
-/* Whatsapp */
-.card-agent-buttons .contact img{ width: 30px;}
-
-/* Configuracion Divs Top Dashboard Secccion 1 */
-#div-dash-top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--dark-blue);
-    color:white;
-    box-shadow: var(--white-shadow);
-    text-align: center;
-    font-weight: bold;
-}
-
-#icono-listing-size{
-    width: 40px;
-    height: 40px;
-    margin:10px;
-}
-
 /* Active */
 .profile-dashboard-1 .dash-active button{
     background-color: green;
-    border: none;
-    border-radius: var(--button-radius);
     width: 100px;
     height: 40px;
-    color: white;
-    font-weight: bold;
+    box-shadow: none;
+    cursor: none;
 }
 
 /* Slider and statistics */
