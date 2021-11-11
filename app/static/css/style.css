@@ -12,10 +12,8 @@
 }
 
 :root {
-
     --pink-button: #f72585;
-    --dark_blue: #0b132b; 
-    --text-a: #edf0f1;
+    --dark-blue: #0b132b;
     --button-radius: 20px;
     --white-shadow: 1px 1px 10px rgba(255,255,255,0.4);
     --blue-shadow:  1px 1px 10px rgba(0,255,255,0.4);
@@ -25,15 +23,6 @@
 }
 
 body {
-/*background: rgb(145,65,143);
-background: linear-gradient(315deg, rgba(145,65,143,1) 0%, rgba(0,7,36,1) 72%);*/
-
-/* Color Azul con Morado
-background: rgb(41,51,124);
-background: radial-gradient(circle, rgba(41,51,124,1) 56%, rgba(161,65,171,0.8547794117647058) 100%);
-*/
-
-
 /* Color Azul con blanco  */
 background: rgb(23,80,143);
 background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
@@ -46,7 +35,7 @@ background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
 }
 
 /* Configuracion del los items del Menu */
-body .nav_items {
+.nav_items {
     display: flex;
     align-items: center;
     padding: 35px 25px 35px;
@@ -475,7 +464,7 @@ body .nav_items {
     grid-template-rows: 160px 150px 70px 170px 50px;
     align-content: space-evenly;
     text-align: center;
-    background-color: var(--dark_blue);
+    background-color: var(--dark-blue);
     color: white;
     font-weight: bold;
     font-size: 13px;
@@ -561,7 +550,7 @@ body .nav_items {
     grid-template-rows: 50px;
     align-items: center;
     background-color: white;
-    color: var(--dark_blue);
+    color: var(--dark-blue);
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -571,146 +560,40 @@ body .nav_items {
 /* Whatsapp */
 .card-agent-buttons .contact img{ width: 30px;}
 
-/* Config Divs Dashboard */
-/* Colonia*/
-.profile-dashboard-1 .dash-colonia {
+/* Configuracion Divs Top Dashboard Secccion 1 */
+#div-dash-top {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--dark_blue);
+    background-color: var(--dark-blue);
     color:white;
     box-shadow: var(--white-shadow);
     text-align: center;
     font-weight: bold;
 }
 
-/* Active */
-.profile-dashboard-1 .dash-active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--dark_blue);
-    color:white;
-    box-shadow: var(--white-shadow);
-    text-align: center;
+#icono-listing-size{
+    width: 40px;
+    height: 40px;
+    margin:10px;
 }
 
+/* Active */
 .profile-dashboard-1 .dash-active button{
     background-color: green;
     border: none;
-    border-radius: 50px;
+    border-radius: var(--button-radius);
     width: 100px;
     height: 40px;
     color: white;
     font-weight: bold;
 }
 
-.profile-dashboard-1 .dash-price {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--dark_blue);
-    color:white;
-    box-shadow: var(--white-shadow);
-    text-align: center;
-    font-weight: bold;
-}
-
-/* Terreno */
-.profile-dashboard-1 .dash-m2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--dark_blue);
-    color:white;
-    box-shadow: var(--white-shadow);
-    text-align: center;
-    font-weight: bold;
-}
-
-.profile-dashboard-1 .dash-m2 img{
-    width: 20px;
-    height: 20px;
-    margin:10px;
-}
-
-/* Construccion */
-.profile-dashboard-1 .dash-construccion {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--dark_blue);
-    color:white;
-    box-shadow: var(--white-shadow);
-    text-align: center;
-    font-weight: bold;
-}
-
-.profile-dashboard-1 .dash-construccion img{
-    width: 25px;
-    height: 25px;
-    margin:10px;
-}
-
-/* habitaciones */
-.profile-dashboard-1 .dash-hab {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--dark_blue);
-    color:white;
-    box-shadow: var(--white-shadow);
-    text-align: center;
-    font-weight: bold;
-}
-
-.profile-dashboard-1 .dash-hab img{
-    width: 25px;
-    height: 25px;
-    margin:10px;
-}
-
-/* banos */
-.profile-dashboard-1 .dash-banos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--dark_blue);
-    color:white;
-    box-shadow: var(--white-shadow);
-    text-align: center;
-    font-weight: bold;
-}
-
-.profile-dashboard-1 .dash-banos img{
-    width: 25px;
-    height: 25px;
-    margin:10px;
-}
-
-/* autos */
-.profile-dashboard-1 .dash-autos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--dark_blue);
-    color:white;
-    box-shadow: var(--white-shadow);
-    text-align: center;
-    font-weight: bold;
-}
-
-.profile-dashboard-1 .dash-autos img{
-    width: 25px;
-    height: 25px;
-    margin:10px;
-}
-
 /* Slider and statistics */
 .slider-profile {
     grid-column: 2/6;
     grid-row: 2/3;
-    background-color: var(--dark_blue);
+    background-color: var(--dark-blue);
     box-shadow: var(--white-shadow);
 }
 
@@ -727,12 +610,6 @@ body .nav_items {
     box-shadow: var(--white-shadow);
 }
 
-.chart-price img {
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-
-}
 
 
 
