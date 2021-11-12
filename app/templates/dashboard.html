@@ -23,16 +23,16 @@
          <button class="general-button cta-contact">Contactar Agente</button>
       </div>
       <div class="card-agent-followers">
-         <div class="flex-general-div seguidores">
+         <div class="flex-general-div followers-div">
             <ul>
                <li>200</li>
-               <li class="pink">Seguidores</li>
+               <li class="label-color">Seguidores</li>
             </ul>
          </div>
-         <div class="flex-general-div siguiendo">
+         <div class="flex-general-div followers-div">
             <ul>
                <li>20</li>
-               <li class="pink">Siguiendo</li>
+               <li class="label-color">Siguiendo</li>
             </ul>
          </div>
       </div>
@@ -66,12 +66,27 @@
        <img class="icono-dash" src="{{url_for('static', filename='/iconos/car_dark.png')}}">
        <p>3</p>
    </div>
-   <div class="slider-profile">
+   <div class="slider-listing-profile">
        <img src="{{url_for('static', filename='/listing_pic/listingpic.jpeg')}}">
    </div>
-    <div class="chart-price">
+    <div class="chart-1">
 <!--        <img src="{{url_for('static', filename='/plots/price_box.png')}}">-->
-        {% include '/12089/price_box.html' %}
+        {% include '/1085/sector_inmo_pie.html' %}
     </div>
+    <div class="kpi-first-section">
+        <div class="card-info-div kpi-div">
+            <div class="kpi-data">87%</div>
+            <div class="kpi-label flex-general-div">Perfect Score</div>
+        </div>
+        <div class="card-info-div kpi-div">
+            <div class="kpi-data">8%</div>
+            <div class="kpi-label flex-general-div">CAP RATE</div>
+        </div>
+        <div class="card-info-div kpi-div">
+            <div class="kpi-data">4%</div>
+            <div class="kpi-label flex-general-div">Plusvalia Promedio</div>
+        </div>
+    </div>
+
 </section>
 {% endblock %}

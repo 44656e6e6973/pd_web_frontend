@@ -1,13 +1,21 @@
-/* Configuracion General Del Sitio Web */
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/* ------CONFIGURACION GENERAL SITIO WEB---------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 :root {
-    --pink-button: #f72585;
+    --button-color: #43aa8b;
+    --button-color-hover: #ff9e00 ;/* f72585; */
     --dark-blue: #0b132b;
     --button-radius: 20px;
     --border-card: 20px;
-    --white-shadow: 1px 1px 10px rgba(255,255,255,0.4);
+    /*--white-shadow: 1px 1px 10px rgba(255,255,255,0.4);*/
+    --white-shadow-hover: 1px 1px 15px rgba(255,255,255,0.4);
     --blue-shadow:  1px 1px 10px rgba(0,255,255,0.4);
     --hover-sacale: scale(1.1);
     --h1: 30px;
@@ -34,16 +42,18 @@ h4 { 13px; }
 }
 
 body {
-    background: rgb(23,80,143); /* <-- Color Azul con blanco  */
+    background: rgb(23,80,143);
     background: radial-gradient(circle, rgba(23,80,143,1) 7%, rgba(23,24,43,1) 65%);
 }
 
-/* Header Regular title */
+/* ----------------------------------------------------------------*/
+/* ------CONFIGURACION HEADER: HEADER SECTION----------------------*/
+/* ----------------------------------------------------------------*/
 .main-information {
     display:flex;
     align-items: center;
     justify-content: start;
-    margin: 40px 20px 60px 20px;
+    margin: 30px 20px 40px 20px;
 }
 
 /* Configuracion General Cartas de Informacion (Listing/UserAgent) */
@@ -68,7 +78,9 @@ body {
     margin-top: 10px;
 }
 
-/* Config Profile Pic */
+/* ----------------------------------------------------------------*/
+/* ------CONFIGURACION PROFILE PIC: IMAGEN DE PERFIL---------------*/
+/* ----------------------------------------------------------------*/
 .profile-picture {
     border-radius: 50%;
     width: 100px;
@@ -81,7 +93,9 @@ body {
 .profile-picture:hover{
     box-shadow: 1px 1px 15px rgba(0,255,255,0.9);
 }
-/* General Config Botones Sitio Web */
+/* ----------------------------------------------------------------*/
+/* ------CONFIGURACION BOTONES: CTA BOTON--------------------------*/
+/* ----------------------------------------------------------------*/
 .general-button {
     width: 50%;
     height: 40px;
@@ -90,25 +104,27 @@ body {
     border: none;
     box-shadow: var(--white-shadow);
     color: white;
-    background-color: var(--pink-button);
+    background-color: var(--button-color);
     cursor: pointer;
     transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
 }
 
 .general-button:hover {
     box-shadow: 1px 1px 20px rgba(255,255,255,0.9);
-    background: orange;
+    background: var(--button-color-hover);
     transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
     transform: scale(0.95);
 }
-/*  Config Iconos Inmuebles */
+/* ----------------------------------------------------------------*/
+/* ------CONFIGURACION ICONOS: ICONOS LISTING----------------------*/
+/* ----------------------------------------------------------------*/
 .icono-dash{
     width: 25px;
     height: 25px;
     margin:10px;
 }
 /*-----------------------------------------------------------------*/
-/*----------Configuracion Bottom Social Card (lik/whatsapp --------*/
+/*----------CONFIGURACION CTA SOCIAL: Bottom (like/whatsapp)-------*/
 /*-----------------------------------------------------------------*/
 .bottom-card-social {
     display: grid;
@@ -142,6 +158,7 @@ body {
 .icono-like:hover {
     transform: var(--hover-sacale);
 }
+
 /* Config Icono Whatsapp */
 .whatsapp-div {
     display: flex;
@@ -163,52 +180,55 @@ body {
     transform: var(--hover-sacale);
 }
 
-/* Listing Card Img */
+/* ----------------------------------------------------------------*/
+/* ------IMAGEN LISTING: IMAGEN TARJETAS---------------------------*/
+/* ----------------------------------------------------------------*/
 .listing-card-img {
     border-top-left-radius: var(--border-card);
     border-top-right-radius: var(--border-card);
 }
 
-
-/*--------------------------------Menu de naveggacion---------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*----------CONFIG NAV-MENU: MENU DE NAVEGACIO---------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
 
 .nav_menu {
-    /* position: relative; */
     z-index: 100;
 }
 
 /* Configuracion del los items del Menu */
 .nav_items {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 35px 25px 35px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    padding: 20px 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-    list-style: none;
-    background-color: #001219;
-    box-shadow: var(--white-shadow);
+    background-color: var(--dark-blue);
+    box-shadow: var(--white-shadow-hover);
 }
 
 /* Flex Conteiner position */
-
 .nav_items {
     position: relative;
 }
 
+/* Logo */
 .nav_items .logo{
     display: flex;
     flex: 1;
     flex-basis: 7%;
     justify-content: center;
     cursor: pointer;
+    font-size: 20px;
 }
 
+/* Barra de busqueda */
 .nav_items .search{
     display: flex;
     flex: 1;
@@ -217,23 +237,6 @@ body {
     margin-right: 50px;
 }
 
-.nav_items .profile{
-    display: flex;
-    flex: 2;
-    flex-basis: 10%;
-    justify-content: center;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-.nav_items .cta{
-    display: flex;
-    flex: 1;
-    flex-basis: 10%;
-    justify-self: flex-start;
-}
-
-/* Configuracion items */
 .nav_items .search input{
     width: 100%;
     height: 40px;
@@ -251,6 +254,31 @@ body {
 .nav_items .search input:hover{
     box-shadow: 1px 1px 15px rgba(255,255,255,0.9);
     transition: 0.5s ease; /* <-- Efecto Hover en la tarjeta */
+}
+
+/* Imagen de Perfil */
+.nav_items .profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+    flex-basis: 10%;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.profile p{
+    margin-top: 10px;
+}
+
+/* Boton Publicar Gratis  */
+.nav_items .cta{
+    display: flex;
+    flex: 1;
+    flex-basis: 10%;
+    justify-self: flex-start;
 }
 
 .nav_items .profile .nav_profile{
@@ -273,8 +301,8 @@ body {
 .nav_items .sub_menu_profile {
     display: block;
     position: absolute;
-    right: 23.4%;
-    background-color:  #001219;
+    right: 20.4%;
+    background-color:  var(--dark-blue);
     padding: 55px 30px 10px;
     border-radius: 15px;
     z-index: -1;
@@ -320,8 +348,14 @@ body {
 .sub_menu_profile li {
     list-style: none;
 }
+
+
 /*-----------------------------------------------------------------*/
-/*---------------------------------- Cards  -----------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------LISTING CARDS: Cartas de inmuebles--------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 
 /* Contenedor Flex para Cartas de Listing */
@@ -334,7 +368,6 @@ body {
     flex-wrap: wrap;
     overflow: hidden;
 }
-
 
 /* Inicio de la Seccion Card lIsting */
 .container-1 .card-div {
@@ -350,7 +383,7 @@ body {
 /* efecto hover de la tarjeta */
 .card-div:hover {
     transform: var(--hover-sacale);
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+    box-shadow: var(--white-shadow-hover);
 }
 
 /* Esta es la seccion que se encarga de customizar la imagen dentro de la carta */
@@ -381,13 +414,13 @@ body {
 }
 
 .card-text .colonia:hover{
-    box-shadow: 1px 1px 15px rgba(0,255,255,0.9);
+    box-shadow: var(--white-shadow-hover);
 }
 
 /* tipo de inmueble */
 .card-text .tipo-inmueble {
     font-size: 13px;
-    color: #f72585;
+    color: var(--button-color);
 }
 
 /* Informacion inmueble */
@@ -419,23 +452,24 @@ body {
 }
 
 /*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
 /*-------------------------- Dashboard-----------------------------*/
 /*-----------------------------------------------------------------*/
-.profile-dashboard-1 div{
-    /*border: 1px solid;*/
-    border-radius: 15px;
-}
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
 
 /* Main Grid for the dashboard */
 .profile-dashboard-1{
     display: grid;
     margin: 20px;
-    grid-gap: 30px;
+    grid-gap: 15px;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: 70px 500px;
 }
-
-/* General Configuration of the left Card (Profile) In the dashboard*/
+/* ----------------------------------------------------------------*/
+/* ------GENERAL INFORMATION: PROFILE CARD-------------------------*/
+/* ----------------------------------------------------------------*/
 .profile-dashboard-1 .profile-card {
     grid-row:1/3; /* <- Configuracion del Grid General */
 
@@ -477,15 +511,21 @@ body {
     font-size: 12px;
 }
 
-.profile-dashboard-1 .profile-card .card-agent-followers div{
+
+.followers-div{
+    display:flex;
     flex-direction: columns;
     flex-wrap: wrap;
     height: 80px;
     margin: 5px;
     border: 1px solid;
+    border-radius: var(--border-card);
 }
 
-.card-agent-followers .pink{color: var(--pink-button);}
+.card-agent-followers .label-color{
+    color: var(--button-color);
+    font-weight: bold;
+}
 
 .bottom-card-social div{
     border-top-left-radius: 0px;
@@ -500,26 +540,68 @@ body {
     cursor: none;
 }
 
-/* Slider and statistics */
-.slider-profile {
-    grid-column: 2/6;
+/*---------------------------------------------------------*/
+/*----------------LISTING PIC & CHART-1 -------------------*/
+/*---------------------------------------------------------*/
+.slider-listing-profile {
+    grid-column: 2/5;
     grid-row: 2/3;
     background-color: var(--dark-blue);
     box-shadow: var(--white-shadow);
 }
 
-.slider-profile img{
+.slider-listing-profile img{
     width: 100%;
     height: 100%;
     border-radius: 0px;
     border: none;
 }
 
-.chart-price {
-    grid-column: 6/10;
+.chart-1 {
+    grid-column: 5/9;
     grid-row: 2/2;
     box-shadow: var(--white-shadow);
 }
+
+/*---------------------------------------------*/
+/*----------Seccion KPI 1era Seccion-----------*/
+/*---------------------------------------------*/
+.kpi-first-section {
+    grid-column: 8/10;
+    grid-row: 2/2;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 5px;
+}
+
+.kpi-div{
+    display:grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+}
+
+.kpi-label {
+    height: 100%;
+    background-color: white;
+    color: var(--dark-blue);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: var(--border-card);
+    border-top-right-radius: var(--border-card);
+    font-size: var(--h2);
+    font-weight: bold;
+}
+
+.kpi-data {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: var(--h1);
+}
+
+
+
 
 
 
