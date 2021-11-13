@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <header class="main-information">
-        <h1>Puerta de Hierro, Zapopan, Jalisco</h1>
+   <h1>Puerta de Hierro, Zapopan, Jalisco</h1>
 </header>
+<!--PRIMERA SECCION -->
 <section class="profile-dashboard-1">
+   <!--   ELEMENTOS DEL PERFIL DEL VENDEDOR-->
    <div class="card-info-div profile-card">
       <div class="flex-general-div card-agent-listing"> <img class="profile-picture" src="{{url_for('static', filename= '/profile_pic/profile.jfif')}}"></div>
       <div class="card-info-div card-agent-info">
@@ -11,9 +13,9 @@
             <li>
                <h3>Jorge Canchala</h3>
             </li>
-            <hr>
+            <hr class="hr-card">
             <br>
-            <li>Perfect Deals</li>
+            <li>Perfect Dealsa</li>
             <li>Paseo Loma Larga</li>
             <li>333-9549-781</li>
             <li>www.perfectdeals.com.mx</li>
@@ -41,52 +43,128 @@
          <div class="whatsapp-div"><img class="icono-whatsapp" src="{{url_for('static', filename= '/iconos/whatsapp.png')}}"></div>
       </div>
    </div>
+   <!--   CARACTERISTICAS DEL INMUEBLE-->
    <div class="flex-general-div card-info-div dash-tipo-operacion" >Venta</div>
    <div class="flex-general-div card-info-div dash-active" >
-       <button class="general-button active">Activa</button>
+      <button class="general-button active">Activa</button>
    </div>
    <div class="flex-general-div card-info-div dash-price" >$12,000,000</div>
    <div class="flex-general-div card-info-div dash-m2" >
-       <img class="icono-dash" src="{{url_for('static', filename= '/iconos/land_dark.png')}}">
-       <p>500 m2</p>
+      <img class="icono-dash" src="{{url_for('static', filename= '/iconos/land_dark.png')}}">
+      <p>500 m2</p>
    </div>
    <div class="flex-general-div card-info-div dash-construccion" >
-       <img class="icono-dash" src="{{url_for('static', filename= '/iconos/const_dark.png')}}">
-       <p>500 m2</p>
+      <img class="icono-dash" src="{{url_for('static', filename= '/iconos/const_dark.png')}}">
+      <p>500 m2</p>
    </div>
    <div class="flex-general-div card-info-div dash-hab" >
-       <img class="icono-dash" src="{{url_for('static', filename= '/iconos/bed_dark.png')}}">
-       <p>3</p>
+      <img class="icono-dash" src="{{url_for('static', filename= '/iconos/bed_dark.png')}}">
+      <p>3</p>
    </div>
    <div class="flex-general-div card-info-div dash-banos" >
-       <img class="icono-dash" src="{{url_for('static', filename='/iconos/bath_dark.png' )}}">
-       <p>2</p>
+      <img class="icono-dash" src="{{url_for('static', filename='/iconos/bath_dark.png' )}}">
+      <p>2</p>
    </div>
    <div class="flex-general-div card-info-div dash-autos" >
-       <img class="icono-dash" src="{{url_for('static', filename='/iconos/car_dark.png')}}">
-       <p>3</p>
+      <img class="icono-dash" src="{{url_for('static', filename='/iconos/car_dark.png')}}">
+      <p>3</p>
    </div>
+   <!--   SLIDER DEL SINGLE LISTING-->
    <div class="slider-listing-profile">
-       <img src="{{url_for('static', filename='/listing_pic/listingpic.jpeg')}}">
+      <img src="{{url_for('static', filename='/listing_pic/listingpic.jpeg')}}">
    </div>
-    <div class="chart-1">
-<!--        <img src="{{url_for('static', filename='/plots/price_box.png')}}">-->
-        {% include '/1085/sector_inmo_pie.html' %}
-    </div>
-    <div class="kpi-first-section">
-        <div class="card-info-div kpi-div">
-            <div class="kpi-data">87%</div>
-            <div class="kpi-label flex-general-div">Perfect Score</div>
-        </div>
-        <div class="card-info-div kpi-div">
-            <div class="kpi-data">8%</div>
-            <div class="kpi-label flex-general-div">CAP RATE</div>
-        </div>
-        <div class="card-info-div kpi-div">
-            <div class="kpi-data">4%</div>
-            <div class="kpi-label flex-general-div">Plusvalia Promedio</div>
-        </div>
-    </div>
-
+   <!--   GRAFICA DE BARRAS PRECIOS-->
+   <div class="chart-1">
+      {% include '/1085/distr_precio.html' %}
+   </div>
+   <!--   SECCION KPIS DEL SINGLE LISTING-->
+   <div class="kpi-first-section">
+      <div class="card-info-div kpi-div">
+         <div class="kpi-data">87%</div>
+         <div class="kpi-label flex-general-div">Perfect Score</div>
+      </div>
+      <div class="card-info-div kpi-div">
+         <div class="kpi-data">8%</div>
+         <div class="kpi-label flex-general-div">CAP RATE</div>
+      </div>
+      <div class="card-info-div kpi-div">
+         <div class="kpi-data">4%</div>
+         <div class="kpi-label flex-general-div">Plusvalia Promedio</div>
+      </div>
+   </div>
+</section>
+<!--SEGUNDA SECCION -->
+<section class="profile-dashboard-2">
+   <div class="card-info-div flex-general-div kpi1">
+      <div class="flex-general-div kpi-data-h">137</div>
+      <div class="kpi-label-h">
+         <img class="icono-dash-kpi" src="{{url_for('static',filename='/iconos/competencia_light.png')}}">
+         <p> Inmuebles cercanos (2km)</p>
+      </div>
+   </div>
+   <div class="card-info-div flex-general-div kpi2">
+      <div class="flex-general-div kpi-data-h">- $3,005,000</div>
+      <div class="kpi-label-h">
+         <img class="icono-dash-kpi" src="{{url_for('static',filename='/iconos/price_compare.png')}}">
+         <p> Diferencia Precio vs Media</p>
+      </div>
+   </div>
+   <div class="card-info-div flex-general-div kpi3">
+      <div class="flex-general-div kpi-data-h">- 120 m2</div>
+      <div class="kpi-label-h">
+         <img class="icono-dash-kpi" src="{{url_for('static',filename='/iconos/m2_compare.png')}}">
+         <p> Terreno vs Media</p>
+      </div>
+   </div>
+   <div class="card-info-div flex-general-div kpi4">
+      <div class="flex-general-div kpi-data-h">- 12 m2</div>
+      <div class="kpi-label-h">
+         <img class="icono-dash-kpi" src="{{url_for('static',filename='/iconos/const_compare.png')}}">
+         <p> Construccion vs Media</p>
+      </div>
+   </div>
+   <div class="card-info-div chart-2">
+      <img src="{{url_for('static', filename= '/plots/6378/map_price_landsize.png')}}">
+   </div>
+   <div class="analytics-box">
+      <h3 class="table-h">Estadistica de la Zona</h3>
+      <table class="content-table">
+         <thead>
+            <tr>
+               <th></th>
+               <th>Minimo</th>
+               <th> Maximo</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Precio</td>
+               <td> 1200000</td>
+               <td> 18000000</td>
+            </tr>
+            <tr>
+               <td>Precio terreno</td>
+               <td> 1200000</td>
+               <td> 18000000</td>
+            </tr>
+            <tr>
+               <td>Precio construccion</td>
+               <td> 1200000</td>
+               <td> 18000000</td>
+            </tr>
+            <tr>
+               <td>Terreno</td>
+               <td> 1200000</td>
+               <td> 18000000</td>
+            </tr>
+            <tr>
+               <td>Construccion</td>
+               <td> 1200000</td>
+               <td> 18000000</td>
+            </tr>
+         </tbody>
+      </table>
+      <img class="temporal" src="{{url_for('static', filename='/plots/6378/corr_pearson_chart.png')}}">
+   </div>
 </section>
 {% endblock %}
