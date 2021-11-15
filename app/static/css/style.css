@@ -439,6 +439,10 @@ body {
     box-shadow: var(--white-shadow-hover);
 }
 
+.card-text .colonia .title{
+    color: var(--dark-blue);
+}
+
 /* tipo de inmueble */
 .card-text .tipo-inmueble {
     font-size: 13px;
